@@ -73,11 +73,7 @@ uagent = {
 #add proxy list file reader here soon
 
 headers = { #gonna add more headers soon the more the better HA HA HA HA HAAA
-    #"User-Agent":random.choice(uagent)
-    #"TARGET":url
-    #"METHOD_NAME":"HIVE_POST_HEX_MIX_HTTP_PAYLOAD"
-    #"MESSAGE TO YOU":u_text
-    #"ATTACK SOURCE":"ATTACK SENT FROM THE HIVE USER:"+usrn+":CREATED BY POSIDEN OF THE HIVE MIND AND SOUND BODY -ps HAKI"
+    "User-Agent":random.choice(uagent)
 }
 
 def http_post_flood(): # dont worry theres gonna be way more shit added to the method
