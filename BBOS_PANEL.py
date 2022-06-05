@@ -54,7 +54,7 @@ def attack_menu():
                while True:
                    time.sleep(300)
        except KeyboardInterrupt:
-           print("NOTTY ACTIONS DETECTED YOUR GETTING PUT IN TIME OUT FOR 300s AGAIN YOU FUCKING BOZO")
+           print("\nNOTTY ACTIONS DETECTED YOUR GETTING PUT IN TIME OUT FOR 300s AGAIN YOU FUCKING BOZO")
            for _ in range(1):
                try:
                    time.sleep(300)
@@ -80,8 +80,6 @@ def menu():
             time.sleep(1)
 
 def login():
-    #admin_credentials = str("link here")
-    #r = requests.get(admin_)
     user_input = str(input("USERNAME: "))
     pass_input = str(input("PASSWORD: "))
 
