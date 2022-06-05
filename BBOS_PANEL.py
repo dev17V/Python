@@ -1,3 +1,4 @@
+#!usr/bin/python3
 import requests
 import time
 import sys
@@ -9,7 +10,7 @@ password = "HIVENET7"
 max_time = "300s | 5min"
 
 methods_from_api = str("https://pastebin.com/raw/5iBn9TAQ")
-api = str("https://example.com/")
+api = str("https://example.com/") #your api link goes here UwU Furher Acker Was Here
 
 os.system("clear")
 
