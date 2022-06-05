@@ -32,7 +32,6 @@ def time_out():
            really_nigga()
 
 def attack_menu():
-    #try:
        ip = str(input("IP: "))
        port = str(input("PORT: "))
        print(f"MAX PRESET ATTACK TIME {max_time}")
