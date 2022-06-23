@@ -8,7 +8,7 @@ password = "HIVENET7"
 
 max_time = "1200s | 5min"
 
-methods_from_api = str("https://pastebin.com/raw/1zGPiSsJ")
+methods_from_api = str("https://pastebin.com/raw/1zGPiSsJ") #MAKE A PASTEBIN FOR YOUR METHODS
 api = "APILINKGOESHERE" # this is your main power api
 key = "APIKEYGOESHERE"
 user = "root" #if it uses a user/key to send youll need this
